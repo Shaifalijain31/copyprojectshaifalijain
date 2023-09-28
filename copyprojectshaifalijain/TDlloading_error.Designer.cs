@@ -69,7 +69,7 @@ namespace copyprojectshaifalijain
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(128, 11);
+            this.label1.Location = new System.Drawing.Point(108, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(480, 20);
             this.label1.TabIndex = 0;

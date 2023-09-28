@@ -19,6 +19,11 @@ namespace copyprojectshaifalijain
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+            // if the user presses escape a mainexit form should open asking for exit 
+
+
+
+
             Form formBackground = new Form();
             Panel P = this.Parent as Panel;
             if (keyData == (Keys.Escape))
