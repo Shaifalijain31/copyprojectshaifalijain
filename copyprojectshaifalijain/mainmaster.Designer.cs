@@ -268,10 +268,11 @@ namespace copyprojectshaifalijain
             // CurrentForm
             // 
             this.CurrentForm.AutoSize = true;
+            this.CurrentForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrentForm.ForeColor = System.Drawing.Color.White;
             this.CurrentForm.Location = new System.Drawing.Point(28, -2);
             this.CurrentForm.Name = "CurrentForm";
-            this.CurrentForm.Size = new System.Drawing.Size(116, 17);
+            this.CurrentForm.Size = new System.Drawing.Size(155, 20);
             this.CurrentForm.TabIndex = 0;
             this.CurrentForm.Text = "Child Form Name";
             // 

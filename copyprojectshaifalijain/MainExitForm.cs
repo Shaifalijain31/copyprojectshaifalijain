@@ -21,7 +21,7 @@ namespace copyprojectshaifalijain
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-
+         
             if (keyData == (Keys.Enter) || keyData == (Keys.Y))
             {
                 timer1.Start();
@@ -40,7 +40,9 @@ namespace copyprojectshaifalijain
 
         private void MainExitForm_Load(object sender, EventArgs e)
         {
-
+            button3.Left = -120;
+            button1.TabStop = false;
+            button2.TabStop = false;
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)

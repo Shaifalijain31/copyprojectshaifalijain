@@ -17,12 +17,35 @@ namespace copyprojectshaifalijain
             InitializeComponent();
         }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+
+            if (keyData == (Keys.Enter) )
+            {
+               if(textBox1.Text != string.Empty && textBox2.Text !=string.Empty)
+                {
+                    mainmaster master = (mainmaster)this.Parent.FindForm();
+                    master.RecreateCenterForm<VoucherParent>();
+                }
+                return true;
+            }
+            else if ( keyData == (Keys.Escape))
+            {
+                this.Close();
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+
+        }
         private void login_Load(object sender, EventArgs e)
         {
-            // Access the parent form
-           // Form parent = (Form)this.Owner;
-         //  Label label = this.Parent.Labels["Label1"];
-            parent.CurrentForm.Text = "";
+            mainmaster master = (mainmaster)this.Parent.FindForm();
+            master.CurrentForm.Text = "LOGIN";
+
+            // Form parent = (Form)this.Owner;
+            // Label label = parent.Controls.Find("CurrentForm", true)[0] as Label;
+           // label.Text = "LOGIN";
             label1.Text += "Dummy";
             this.ActiveControl = textBox1;
         }

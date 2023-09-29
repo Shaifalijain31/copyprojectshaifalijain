@@ -68,7 +68,8 @@ namespace copyprojectshaifalijain
         }       
         private void TDlloading_error_Load(object sender, EventArgs e)
         {
-              
+            mainmaster master = (mainmaster)this.Parent.FindForm();
+            master.CurrentForm.Text = "TDL Loading Error";
             HideButtonsInParentFormTableLayoutPanel();
         }
         private void HideButtonsInParentFormTableLayoutPanel()
