@@ -19,7 +19,12 @@ namespace copyprojectshaifalijain
 
         private void login_Load(object sender, EventArgs e)
         {
-
+            // Access the parent form
+           // Form parent = (Form)this.Owner;
+         //  Label label = this.Parent.Labels["Label1"];
+            parent.CurrentForm.Text = "";
+            label1.Text += "Dummy";
+            this.ActiveControl = textBox1;
         }
     }
 }

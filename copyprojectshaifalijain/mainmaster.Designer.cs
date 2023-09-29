@@ -44,7 +44,7 @@ namespace copyprojectshaifalijain
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.CurrentForm = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -238,7 +238,7 @@ namespace copyprojectshaifalijain
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(84)))), ((int)(((byte)(70)))));
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.CurrentForm);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 45);
             this.panel2.Name = "panel2";
@@ -265,15 +265,15 @@ namespace copyprojectshaifalijain
             this.label2.TabIndex = 1;
             this.label2.Text = "Company Name Here";
             // 
-            // label1
+            // CurrentForm
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(28, -2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Child Form Name";
+            this.CurrentForm.AutoSize = true;
+            this.CurrentForm.ForeColor = System.Drawing.Color.White;
+            this.CurrentForm.Location = new System.Drawing.Point(28, -2);
+            this.CurrentForm.Name = "CurrentForm";
+            this.CurrentForm.Size = new System.Drawing.Size(116, 17);
+            this.CurrentForm.TabIndex = 0;
+            this.CurrentForm.Text = "Child Form Name";
             // 
             // mainmaster
             // 
@@ -308,7 +308,6 @@ namespace copyprojectshaifalijain
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -320,6 +319,7 @@ namespace copyprojectshaifalijain
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label CurrentForm;
     }
 }
 

@@ -70,6 +70,12 @@
     <Compile Include="mainmaster.Designer.cs">
       <DependentUpon>mainmaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="VoucherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VoucherForm.Designer.cs">
+      <DependentUpon>VoucherForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TDlloading_error.cs">
@@ -101,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="TDlloading_error.resx">
       <DependentUpon>TDlloading_error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VoucherForm.resx">
+      <DependentUpon>VoucherForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

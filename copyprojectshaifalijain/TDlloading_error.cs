@@ -68,7 +68,7 @@ namespace copyprojectshaifalijain
         }       
         private void TDlloading_error_Load(object sender, EventArgs e)
         {
-
+              
             HideButtonsInParentFormTableLayoutPanel();
         }
         private void HideButtonsInParentFormTableLayoutPanel()
