@@ -20,30 +20,35 @@ namespace copyprojectshaifalijain
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             // if the user presses escape a mainexit form should open asking for exit 
-
-
-
-
-            Form formBackground = new Form();
-            Panel P = this.Parent as Panel;
             if (keyData == (Keys.Escape))
             {
-                // try to create blur form 
-                //formBackground.StartPosition = FormStartPosition.Manual;
-                //formBackground.FormBorderStyle = FormBorderStyle.None;
-                //formBackground.Opacity = .50d;
-                //formBackground.BackColor = Color.Black;
-                //formBackground.WindowState = FormWindowState.Maximized;
-                //formBackground.TopMost = true;
-                //formBackground.Location = this.Location;
-                //formBackground.ShowInTaskbar = false;
-                //formBackground.Show();
-                //MainExitForm mx = new MainExitForm();
-                //mx.Owner = formBackground;
-                //mx.ShowDialog();
+                Form formBackground = new Form();
+               // formBackground.TopMost = true;
+                mainmaster main = (mainmaster)this.Parent.FindForm();
+                Panel mainmasterpanel = main.Mainmasterpanel;
+                Rectangle bounds = mainmasterpanel.Parent.RectangleToScreen(mainmasterpanel.Bounds);
+                Point panelLocation = mainmasterpanel.Location;
+                Point screenLocation = mainmasterpanel.PointToScreen(panelLocation);
+                formBackground.StartPosition = FormStartPosition.Manual;
+                formBackground.Location = screenLocation;
+                formBackground.Bounds = bounds;
+                formBackground.Opacity = .50d;
+                formBackground.BackColor = Color.Black;
+                formBackground.FormBorderStyle = FormBorderStyle.None;
+                formBackground.ShowInTaskbar = false;
+                formBackground.Show();
+                using (MainExitForm mx = new MainExitForm())
+                {
+                    mx.StartPosition = FormStartPosition.CenterParent;
+                    mx.ShowInTaskbar = false;
+                    mx.ShowDialog(formBackground);
+                    if(mx.DialogResult == DialogResult.Cancel)
+                    {
+                        formBackground.Close();
 
-                //formBackground.Dispose();
-                ////this.Close();
+                    }
+                }                
+               
                 return true;
             }
             else if (keyData == (Keys.Enter))
@@ -59,42 +64,8 @@ namespace copyprojectshaifalijain
         {
             mainmaster master = (mainmaster)this.Parent.FindForm();
             master.RecreateCenterForm<T>();
-            //Panel P = this.Parent as Panel;
-
-            //if (P != null)
-            //{
-            //    foreach (Form oldForm in P.Controls.OfType<Form>().ToArray())
-            //    {
-            //        using (oldForm)
-            //        {
-            //            oldForm.Close();
-            //            P.Controls.Remove(oldForm);
-            //        }
-            //    }
-
-            //    var newForm = new T
-            //    {
-            //        TopLevel = false,
-            //       // Visible = true 
-            //    };
-            //    // Calculate the X and Y coordinates for centering the form
-            //    int x = (P.Width - newForm.Width) / 2;
-            //    int y = (P.Height - newForm.Height) / 2;
-            //    // Set the location of the form
-            //    newForm.Location = new Point(x, y);
-            //    newForm.FormBorderStyle = FormBorderStyle.None;
-            //    newForm.StartPosition = FormStartPosition.CenterParent;
-            //    newForm.Anchor = AnchorStyles.None;
-            //    newForm.ControlBox = false;
-            //    newForm.ShowInTaskbar = false;
-            //    //  newForm.BringToFront(); // no need as there is no previous form left to overlap the current form 
-            //     P.Controls.Add(newForm);
-            //    newForm.Show();
-            //    newForm.Focus();
-
-            //}
-
-        }
+          
+        }       
         private void TDlloading_error_Load(object sender, EventArgs e)
         {
 
@@ -122,6 +93,11 @@ namespace copyprojectshaifalijain
                     }
                 }
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

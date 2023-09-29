@@ -27,7 +27,7 @@ namespace copyprojectshaifalijain
                 timer1.Start();
                 return true;
             }
-            else if (keyData == (Keys.N))
+            else if (keyData == (Keys.N) || keyData == (Keys.Escape))
             {
                 this.Close();
                 return true;
@@ -52,7 +52,7 @@ namespace copyprojectshaifalijain
             else
             {
                 timer1.Stop();
-                Application.Exit();
+                Application.ExitThread();
             }
         }
 
