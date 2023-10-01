@@ -70,7 +70,6 @@
     <Compile Include="mainmaster.Designer.cs">
       <DependentUpon>mainmaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaveLastFormContext.cs" />
     <Compile Include="VoucherParent.cs">
       <SubType>Form</SubType>
     </Compile>

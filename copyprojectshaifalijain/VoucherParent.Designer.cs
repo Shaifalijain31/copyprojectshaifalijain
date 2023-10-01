@@ -68,7 +68,7 @@ namespace copyprojectshaifalijain
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(408, 63);
+            this.textBox2.Location = new System.Drawing.Point(417, 63);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(164, 22);
             this.textBox2.TabIndex = 4;
@@ -104,6 +104,7 @@ namespace copyprojectshaifalijain
             this.Controls.Add(this.VoucherType);
             this.Name = "VoucherParent";
             this.Text = "Navigationform";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VoucherParent_FormClosing);
             this.Load += new System.EventHandler(this.VoucherForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
