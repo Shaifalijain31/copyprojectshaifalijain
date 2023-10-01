@@ -25,8 +25,8 @@ namespace copyprojectshaifalijain
             master.CurrentForm.Text = "Accounting Voucher Creation";
 
 
-            // @koz6.0 help needed , i have only one fo
-            // choise FirstForm
+            // @koz6.0 help needed , i have only one form 
+            // 
             var settings = copyprojectshaifalijain.Properties.Settings.Default;
             string lastForm = settings.Lastform; 
            
