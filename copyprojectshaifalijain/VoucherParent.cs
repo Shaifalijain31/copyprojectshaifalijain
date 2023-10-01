@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,27 +20,33 @@ namespace copyprojectshaifalijain
 
         private void VoucherForm_Load(object sender, EventArgs e)
         {
-
+            textBox3.Text = DateTime.Now.ToString("dd-MMM-yyyy", new CultureInfo("en-us"));          
             mainmaster master = (mainmaster)this.Parent.FindForm();
             master.CurrentForm.Text = "Accounting Voucher Creation";
-            //if ()
-            //{
-            //    this.BackColor = Color.FromArgb(227,220,192);
-            //    this.VoucherType.Text = "Sales";
-            //    this.label1.Text = "Reference no.:";
-            //    label2.Hide();
-            //    textBox2.Hide();
 
-            //}
-            //else if ()
-            //{
-            //    this.BackColor = Color.FromArgb(250,43,198);
-            //    this.VoucherType.Text = "Purchase";
-            //    this.label1.Text = "Supplier Invoice no.:";
-            //    label2.Show();
-            //    textBox2.Show();
 
-            //}
+            // @koz6.0 help needed , i have only one fo
+            // choise FirstForm
+            var settings = copyprojectshaifalijain.Properties.Settings.Default;
+            string lastForm = settings.Lastform; 
+           
+            switch (lastForm)
+            {
+                case "Sale":
+                    this.BackColor = Color.FromArgb(227, 220, 192);
+                    this.VoucherType.Text = "Sales";
+                    this.label1.Text = "Reference no.:";
+                    label2.Hide();
+                    textBox2.Hide();
+                    break;
+                default:
+                    this.BackColor = Color.FromArgb(250, 43, 198);
+                    this.VoucherType.Text = "Purchase";
+                    this.label1.Text = "Supplier Invoice no.:";
+                    label2.Show();
+                    textBox2.Show();
+                    break;
+            }
 
 
 
