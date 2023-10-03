@@ -42,10 +42,6 @@ namespace copyprojectshaifalijain
         {
             mainmaster master = (mainmaster)this.Parent.FindForm();
             master.CurrentForm.Text = "LOGIN";
-
-            // Form parent = (Form)this.Owner;
-            // Label label = parent.Controls.Find("CurrentForm", true)[0] as Label;
-           // label.Text = "LOGIN";
             label1.Text += "Dummy";
             this.ActiveControl = textBox1;
         }

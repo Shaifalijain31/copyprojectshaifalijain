@@ -20,7 +20,7 @@ namespace copyprojectshaifalijain
 
         private void VoucherForm_Load(object sender, EventArgs e)
         {
-            
+            //this.ActiveControl = textBox1; // working but reserved for later 
             textBox3.Text = DateTime.Now.ToString("dd-MMM-yyyy", new CultureInfo("en-us"));          
             mainmaster master = (mainmaster)this.Parent.FindForm();
             master.CurrentForm.Text = "Accounting Voucher Creation";

@@ -64,14 +64,14 @@ namespace copyprojectshaifalijain
             this.textBox1.Location = new System.Drawing.Point(181, 65);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(145, 22);
-            this.textBox1.TabIndex = 3;
+            this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(417, 63);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(164, 22);
-            this.textBox2.TabIndex = 4;
+            this.textBox2.TabIndex = 1;
             // 
             // label2
             // 
@@ -89,7 +89,7 @@ namespace copyprojectshaifalijain
             this.textBox3.Location = new System.Drawing.Point(1037, 12);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(122, 22);
-            this.textBox3.TabIndex = 6;
+            this.textBox3.TabIndex = 2;
             // 
             // VoucherParent
             // 
