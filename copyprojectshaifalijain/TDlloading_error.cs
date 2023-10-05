@@ -22,21 +22,16 @@ namespace copyprojectshaifalijain
             // if the user presses escape a mainexit form should open asking for exit 
             if (keyData == (Keys.Escape))
             {
-                Form formBackground = new Form();
-               // formBackground.TopMost = true;
+               
+                formbackground formBackground = new formbackground(this);
                 mainmaster main = (mainmaster)this.Parent.FindForm();
                 Panel mainmasterpanel = main.Mainmasterpanel;
                 Rectangle bounds = mainmasterpanel.Parent.RectangleToScreen(mainmasterpanel.Bounds);
                 Point panelLocation = mainmasterpanel.Location;
-                Point screenLocation = mainmasterpanel.PointToScreen(panelLocation);
-                formBackground.StartPosition = FormStartPosition.Manual;
+                Point screenLocation = mainmasterpanel.PointToScreen(panelLocation);            
                 formBackground.Location = screenLocation;
-                formBackground.Bounds = bounds;
-                formBackground.Opacity = .50d;
-                formBackground.BackColor = Color.Black;
-                formBackground.FormBorderStyle = FormBorderStyle.None;
-                formBackground.ShowInTaskbar = false;
-                formBackground.Show();
+                formBackground.Bounds = bounds;            
+                formBackground.Show(this);
                 using (MainExitForm mx = new MainExitForm())
                 {
                     mx.StartPosition = FormStartPosition.CenterParent;
@@ -45,7 +40,6 @@ namespace copyprojectshaifalijain
                     if(mx.DialogResult == DialogResult.Cancel)
                     {
                         formBackground.Close();
-
                     }
                 }                
                

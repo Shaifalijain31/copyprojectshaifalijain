@@ -52,6 +52,12 @@
     <Compile Include="blackborder_lightform.Designer.cs">
       <DependentUpon>blackborder_lightform.cs</DependentUpon>
     </Compile>
+    <Compile Include="formbackground.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formbackground.Designer.cs">
+      <DependentUpon>formbackground.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     <Compile Include="mainmaster.Designer.cs">
       <DependentUpon>mainmaster.cs</DependentUpon>
     </Compile>
+    <Compile Include="sale_purchase_datagridview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="sale_purchase_datagridview.Designer.cs">
+      <DependentUpon>sale_purchase_datagridview.cs</DependentUpon>
+    </Compile>
     <Compile Include="VoucherParent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="blackborder_lightform.resx">
       <DependentUpon>blackborder_lightform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formbackground.resx">
+      <DependentUpon>formbackground.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

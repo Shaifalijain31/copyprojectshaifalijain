@@ -60,6 +60,7 @@ namespace copyprojectshaifalijain
             this.Mainmasterpanel.Name = "Mainmasterpanel";
             this.Mainmasterpanel.Size = new System.Drawing.Size(1324, 888);
             this.Mainmasterpanel.TabIndex = 16;
+            this.Mainmasterpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Mainmasterpanel_Paint);
             // 
             // tableLayoutPanel1
             // 

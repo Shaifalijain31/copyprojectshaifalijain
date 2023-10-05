@@ -75,5 +75,10 @@ namespace copyprojectshaifalijain
             // prevent the user from closing the from  directly by taksbar 
             e.Cancel = true;
         }
+
+        private void Mainmasterpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
