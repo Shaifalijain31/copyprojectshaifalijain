@@ -36,10 +36,11 @@ namespace copyprojectshaifalijain
                 {
                     mx.StartPosition = FormStartPosition.CenterParent;
                     mx.ShowInTaskbar = false;
-                    mx.ShowDialog(formBackground);
+                     mx.ShowDialog(formBackground);
                     if(mx.DialogResult == DialogResult.Cancel)
                     {
                         formBackground.Close();
+                        formBackground = null;
                     }
                 }                
                
