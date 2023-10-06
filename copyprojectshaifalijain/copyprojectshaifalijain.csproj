@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,6 +59,7 @@
     <Compile Include="formbackground.Designer.cs">
       <DependentUpon>formbackground.cs</DependentUpon>
     </Compile>
+    <Compile Include="helperclasses\connectionlogics.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +84,10 @@
     <Compile Include="sale_purchase_datagridview.Designer.cs">
       <DependentUpon>sale_purchase_datagridview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sql\ReferenceTables.cs" />
+    <Compile Include="Sql\SqlOperations.cs" />
+    <Compile Include="Sql\SqlStatements.cs" />
+    <Compile Include="Sql\SetupLogging.cs" />
     <Compile Include="VoucherParent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,5 +145,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

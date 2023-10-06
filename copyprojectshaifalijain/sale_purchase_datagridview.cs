@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ namespace copyprojectshaifalijain
 {
     public partial class sale_purchase_datagridview : DataGridView
     {
+        private SqlConnection con;
+        private SqlDataAdapter da;
+        private DataTable dt, dt2;
         public sale_purchase_datagridview()
         {
             InitializeComponent();
