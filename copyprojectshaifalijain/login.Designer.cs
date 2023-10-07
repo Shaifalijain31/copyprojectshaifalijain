@@ -72,6 +72,7 @@ namespace copyprojectshaifalijain
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(178, 22);
             this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "disable right click in me";
             // 
             // textBox2
             // 

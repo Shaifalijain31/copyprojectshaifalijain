@@ -40,6 +40,7 @@ namespace copyprojectshaifalijain
         }
         private void login_Load(object sender, EventArgs e)
         {
+            textBox1.ContextMenuStrip = new ContextMenuStrip();
             mainmaster master = (mainmaster)this.Parent.FindForm();
             master.CurrentForm.Text = "LOGIN";
             label1.Text += "Dummy";

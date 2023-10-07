@@ -84,6 +84,12 @@
     <Compile Include="sale_purchase_datagridview.Designer.cs">
       <DependentUpon>sale_purchase_datagridview.cs</DependentUpon>
     </Compile>
+    <Compile Include="SPECIALCONTROLS\textboxspecial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SPECIALCONTROLS\textboxspecial.Designer.cs">
+      <DependentUpon>textboxspecial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sql\ReferenceTables.cs" />
     <Compile Include="Sql\SqlOperations.cs" />
     <Compile Include="Sql\SqlStatements.cs" />
