@@ -46,29 +46,29 @@ namespace copyprojectshaifalijain
 
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
-            foreach (Control c in enabledList)
-            {
-                c.Enabled = false;
-            }
-            base.OnFormClosed(e);
+            //foreach (Control c in enabledList)
+            //{
+            //    c.Enabled = false;
+            //}
+            //base.OnFormClosed(e);
         }
         private void MainExitForm_Load(object sender, EventArgs e)
         {
             button3.Left = -120;
             button1.TabStop = false;
             button2.TabStop = false;
-            base.OnShown(e);
-            if (Owner != null)
-            {
-                foreach (Control c in Owner.Controls)
-                {
-                    if (c.Enabled)
-                    {
-                        c.Enabled = true;
-                        enabledList.Add(c);
-                    }
-                }
-            }
+            //base.OnShown(e);
+            //if (Owner != null)
+            //{
+            //    foreach (Control c in Owner.Controls)
+            //    {
+            //        if (c.Enabled)
+            //        {
+            //            c.Enabled = true;
+            //            enabledList.Add(c);
+            //        }
+            //    }
+            //}
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)

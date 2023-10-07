@@ -55,7 +55,7 @@ namespace copyprojectshaifalijain
                     textBox2.Show();
                     break;
             }
-            dt = new DataTable();             
+            dt = new DataTable();
             dataGridView1.DataSource = dt = connectionlogics.FillDataGridView($"SELECT * FROM ledgernames").Tables[0];
             dataGridView1.ColumnHeadersVisible = false;
             dataGridView1.RowHeadersVisible = false;
@@ -71,8 +71,9 @@ namespace copyprojectshaifalijain
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(128,128,128);
             dataGridView1.Columns["id"].Visible = false;
             dataGridView1.Columns["opening_balance"].Visible = false;
-          //  rpos = dataGridView1.CurrentCell.RowIndex;
-         //   cpos = dataGridView1.CurrentCell.ColumnIndex;
+            dataGridView1.ScrollBars = ScrollBars.None;
+            //  rpos = dataGridView1.CurrentCell.RowIndex;
+            //   cpos = dataGridView1.CurrentCell.ColumnIndex;
             dataGridView1.Visible = false;
 
 
@@ -106,13 +107,13 @@ namespace copyprojectshaifalijain
                 else
                 {
 
-                    dataGridView1.DataSource = dataView;
+                  //  dataGridView1.DataSource = dataView;
                 }
             }
             else if(searchText.Length == 0)
             {
-                
-                dataGridView1.DataSource = dt.DefaultView;
+                dataView.RowFilter = null;
+               // dataGridView1.DataSource = dt.DefaultView;
             }
             textBox4.Select(textBox4.Text.Length, 0); // Set cursor at the end
         }
