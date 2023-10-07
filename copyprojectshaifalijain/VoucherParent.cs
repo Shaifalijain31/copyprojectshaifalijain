@@ -72,6 +72,7 @@ namespace copyprojectshaifalijain
             dataGridView1.Columns["id"].Visible = false;
             dataGridView1.Columns["opening_balance"].Visible = false;
             dataGridView1.ScrollBars = ScrollBars.None;
+            dataGridView1.TabStop = false;
             //  rpos = dataGridView1.CurrentCell.RowIndex;
             //   cpos = dataGridView1.CurrentCell.ColumnIndex;
             dataGridView1.Visible = false;

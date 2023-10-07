@@ -29,7 +29,6 @@ namespace copyprojectshaifalijain
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,8 +38,6 @@ namespace copyprojectshaifalijain
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.VoucherType = new System.Windows.Forms.Label();
-            this.textboxspecial1 = new copyprojectshaifalijain.SPECIALCONTROLS.textboxspecial();
-            this.textboxspecial2 = new copyprojectshaifalijain.SPECIALCONTROLS.textboxspecial();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,27 +127,11 @@ namespace copyprojectshaifalijain
             this.VoucherType.Text = "VoucherTypeHere";
             this.VoucherType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textboxspecial1
-            // 
-            this.textboxspecial1.Location = new System.Drawing.Point(654, 84);
-            this.textboxspecial1.Name = "textboxspecial1";
-            this.textboxspecial1.Size = new System.Drawing.Size(171, 22);
-            this.textboxspecial1.TabIndex = 9;
-            // 
-            // textboxspecial2
-            // 
-            this.textboxspecial2.Location = new System.Drawing.Point(654, 113);
-            this.textboxspecial2.Name = "textboxspecial2";
-            this.textboxspecial2.Size = new System.Drawing.Size(171, 22);
-            this.textboxspecial2.TabIndex = 10;
-            // 
             // VoucherParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1278, 566);
-            this.Controls.Add(this.textboxspecial2);
-            this.Controls.Add(this.textboxspecial1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label3);
@@ -181,7 +162,5 @@ namespace copyprojectshaifalijain
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private SPECIALCONTROLS.textboxspecial textboxspecial1;
-        private SPECIALCONTROLS.textboxspecial textboxspecial2;
     }
 }
