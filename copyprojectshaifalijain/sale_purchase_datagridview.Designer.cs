@@ -29,7 +29,16 @@ namespace copyprojectshaifalijain
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // sale_purchase_datagridview
+            // 
+            this.RowTemplate.Height = 24;
+            this.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.sale_purchase_datagridview_CellPainting);
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

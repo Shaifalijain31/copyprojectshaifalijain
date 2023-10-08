@@ -133,6 +133,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="sale_purchase_datagridview.resx">
+      <DependentUpon>sale_purchase_datagridview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TDlloading_error.resx">
       <DependentUpon>TDlloading_error.cs</DependentUpon>
     </EmbeddedResource>

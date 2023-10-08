@@ -32,10 +32,11 @@ namespace copyprojectshaifalijain
             this.AllowUserToResizeColumns = false;
             this.AllowUserToResizeRows = false;
             this.RowTemplate.Height = 30;
+            this.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9.75F, FontStyle.Bold); // HEADER FONT BOLD 
 
-           // var column = this.Columns.GetLastColumn(DataGridViewElementStates.Visible,
-                //                    DataGridViewElementStates.None);
-          //  column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            // var column = this.Columns.GetLastColumn(DataGridViewElementStates.Visible,
+            //                    DataGridViewElementStates.None);
+            //  column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             InitializeComponent();
            
         }
@@ -192,6 +193,53 @@ namespace copyprojectshaifalijain
 
             return base.ProcessDataGridViewKey(e);
         }
+
+        private void sale_purchase_datagridview_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex > -1)
+            {
+                e.PaintBackground(e.CellBounds, true);
+                Rectangle r = e.CellBounds;
+                r.X -= 2;
+
+                // Check if it's the first column
+                if (e.ColumnIndex == 0)
+                { // Adjust the padding for the first column
+                    r.X += 4;
+
+                    // Align the text to the right for the first column
+                    TextRenderer.DrawText(e.Graphics, this.Columns[e.ColumnIndex].HeaderText, e.CellStyle.Font, r, e.CellStyle.ForeColor, TextFormatFlags.Right | TextFormatFlags.VerticalCenter);
+                }
+                else
+                {
+                    // Align the text to the left for other columns
+                    TextRenderer.DrawText(e.Graphics, this.Columns[e.ColumnIndex].HeaderText, e.CellStyle.Font, r, e.CellStyle.ForeColor, TextFormatFlags.Left | TextFormatFlags.VerticalCenter);
+                }
+
+                // Draw top double border
+                int topBorderThickness = 3; // Set the thickness of the top border
+                int bottomBorderThickness = 1; // Set the thickness of the bottom border
+                int x = e.CellBounds.Left;
+                int yTop = e.CellBounds.Top;
+                int yBottom = e.CellBounds.Bottom - bottomBorderThickness;
+                int width = e.CellBounds.Width;
+                using (Pen topBorderPen = new Pen(Color.Black, topBorderThickness))
+                using (Pen bottomBorderPen = new Pen(Color.Black, bottomBorderThickness))
+                {
+                    // Draw top border
+                    e.Graphics.DrawLine(topBorderPen, x, yTop, x + width, yTop);
+
+                    // Draw bottom border
+                    e.Graphics.DrawLine(bottomBorderPen, x, yBottom, x + width, yBottom);
+                }
+
+                //    // 
+
+
+                e.Handled = true;
+            }
+        }
+
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);

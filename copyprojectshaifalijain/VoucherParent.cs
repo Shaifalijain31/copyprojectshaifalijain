@@ -149,30 +149,8 @@ namespace copyprojectshaifalijain
 
         private void sale_purchase_datagridview1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            //if (e.RowIndex == -1 && e.ColumnIndex > -1)
-            //{
-            //    // Draw top double border
-            //    int topBorderThickness = 3; // Set the thickness of the top border
-            //    int bottomBorderThickness = 1; // Set the thickness of the bottom border
-            //    int x = e.CellBounds.Left;
-            //    int yTop = e.CellBounds.Top;
-            //    int yBottom = e.CellBounds.Bottom - bottomBorderThickness;
-            //    int width = e.CellBounds.Width;
-            //    using (Pen topBorderPen = new Pen(Color.Black, topBorderThickness))
-            //    using (Pen bottomBorderPen = new Pen(Color.Black, bottomBorderThickness))
-            //    {
-            //        // Draw top border
-            //        e.Graphics.DrawLine(topBorderPen, x, yTop, x + width, yTop);
-
-            //        // Draw bottom border
-            //        e.Graphics.DrawLine(bottomBorderPen, x, yBottom, x + width, yBottom);
-            //    }
-
-            //    // 
-
-
-            //    e.Handled = true;
-            //}
+          
+           
         }
 
         private void textBox4_KeyDown(object sender, KeyEventArgs e)

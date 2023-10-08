@@ -54,11 +54,11 @@ namespace copyprojectshaifalijain
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(862, 63);
+            this.dataGridView1.Location = new System.Drawing.Point(926, 63);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(415, 491);
+            this.dataGridView1.Size = new System.Drawing.Size(351, 491);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
@@ -172,7 +172,6 @@ namespace copyprojectshaifalijain
             this.sale_purchase_datagridview1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.sale_purchase_datagridview1.Size = new System.Drawing.Size(1276, 340);
             this.sale_purchase_datagridview1.TabIndex = 9;
-            this.sale_purchase_datagridview1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.sale_purchase_datagridview1_CellPainting);
             // 
             // nameofitem
             // 
