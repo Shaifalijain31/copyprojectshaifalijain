@@ -29,6 +29,8 @@ namespace copyprojectshaifalijain
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,6 +41,12 @@ namespace copyprojectshaifalijain
             this.label1 = new System.Windows.Forms.Label();
             this.VoucherType = new System.Windows.Forms.Label();
             this.sale_purchase_datagridview1 = new copyprojectshaifalijain.sale_purchase_datagridview();
+            this.nameofitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.per = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sale_purchase_datagridview1)).BeginInit();
             this.SuspendLayout();
@@ -46,11 +54,11 @@ namespace copyprojectshaifalijain
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1037, 63);
+            this.dataGridView1.Location = new System.Drawing.Point(862, 63);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 491);
+            this.dataGridView1.Size = new System.Drawing.Size(415, 491);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
@@ -131,21 +139,85 @@ namespace copyprojectshaifalijain
             // 
             // sale_purchase_datagridview1
             // 
+            this.sale_purchase_datagridview1.AllowUserToResizeColumns = false;
+            this.sale_purchase_datagridview1.AllowUserToResizeRows = false;
+            this.sale_purchase_datagridview1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.sale_purchase_datagridview1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(243)))), ((int)(((byte)(198)))));
+            this.sale_purchase_datagridview1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.sale_purchase_datagridview1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sale_purchase_datagridview1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameofitem,
+            this.quantity,
+            this.rate,
+            this.per,
+            this.discount,
+            this.total});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(201)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.sale_purchase_datagridview1.DefaultCellStyle = dataGridViewCellStyle1;
             this.sale_purchase_datagridview1.Location = new System.Drawing.Point(1, 167);
+            this.sale_purchase_datagridview1.MultiSelect = false;
             this.sale_purchase_datagridview1.Name = "sale_purchase_datagridview1";
+            this.sale_purchase_datagridview1.RowHeadersVisible = false;
             this.sale_purchase_datagridview1.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(243)))), ((int)(((byte)(198)))));
+            this.sale_purchase_datagridview1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.sale_purchase_datagridview1.RowTemplate.Height = 24;
-            this.sale_purchase_datagridview1.Size = new System.Drawing.Size(1030, 340);
+            this.sale_purchase_datagridview1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.sale_purchase_datagridview1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.sale_purchase_datagridview1.Size = new System.Drawing.Size(1276, 340);
             this.sale_purchase_datagridview1.TabIndex = 9;
+            this.sale_purchase_datagridview1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.sale_purchase_datagridview1_CellPainting);
+            // 
+            // nameofitem
+            // 
+            this.nameofitem.HeaderText = "Name of Item";
+            this.nameofitem.MinimumWidth = 6;
+            this.nameofitem.Name = "nameofitem";
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            // 
+            // rate
+            // 
+            this.rate.HeaderText = "Rate";
+            this.rate.MinimumWidth = 6;
+            this.rate.Name = "rate";
+            // 
+            // per
+            // 
+            this.per.HeaderText = "Per";
+            this.per.MinimumWidth = 6;
+            this.per.Name = "per";
+            // 
+            // discount
+            // 
+            this.discount.HeaderText = "Disc %";
+            this.discount.MinimumWidth = 6;
+            this.discount.Name = "discount";
+            // 
+            // total
+            // 
+            this.total.HeaderText = "Total";
+            this.total.MinimumWidth = 6;
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
             // 
             // VoucherParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1278, 566);
-            this.Controls.Add(this.sale_purchase_datagridview1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.sale_purchase_datagridview1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox3);
@@ -177,5 +249,11 @@ namespace copyprojectshaifalijain
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private sale_purchase_datagridview sale_purchase_datagridview1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameofitem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn per;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
     }
 }

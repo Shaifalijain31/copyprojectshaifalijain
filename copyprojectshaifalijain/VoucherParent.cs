@@ -25,7 +25,8 @@ namespace copyprojectshaifalijain
 
         private void VoucherForm_Load(object sender, EventArgs e)
         {
-         
+
+          //  sale_purchase_datagridview1.Columns[5].ReadOnly = true; // cannot transfer to custom control 
 
             textBox3.TabStop = false;
 
@@ -59,21 +60,21 @@ namespace copyprojectshaifalijain
             dataGridView1.DataSource = dt = connectionlogics.FillDataGridView($"SELECT * FROM ledgernames").Tables[0];
            // dataGridView1.ExpandColumns();
             dataGridView1.ColumnHeadersVisible = false;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.MultiSelect = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.RowHeadersVisible = false; //
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None; //
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect; //
+            dataGridView1.MultiSelect = false; //
+            dataGridView1.AllowUserToResizeColumns = false; //
+            dataGridView1.AllowUserToResizeRows = false; //
             dataGridView1.AllowUserToAddRows = false; // needed to remove last default row
             dataGridView1.ReadOnly = true;
-            dataGridView1.BackgroundColor = Color.FromArgb(211, 241, 213);
-            dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(211, 241, 213);
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(128,128,128);
+            dataGridView1.BackgroundColor = Color.FromArgb(211, 241, 213); //
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(211, 241, 213); //
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(128,128,128); //
             dataGridView1.Columns["id"].Visible = false;
             dataGridView1.Columns["opening_balance"].Visible = false;
-            dataGridView1.ScrollBars = ScrollBars.None;
-            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.ScrollBars = ScrollBars.None; //
+            dataGridView1.RowTemplate.Height = 30; // set height suggested by karen payne 
             dataGridView1.TabStop = false;
             //  rpos = dataGridView1.CurrentCell.RowIndex;
             //   cpos = dataGridView1.CurrentCell.ColumnIndex;
@@ -132,6 +133,7 @@ namespace copyprojectshaifalijain
 
         }
 
+        // MAKE FONT BOLD WHEN UP AND DOWN 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             DataGridView dataGridView = sender as DataGridView;
@@ -143,6 +145,34 @@ namespace copyprojectshaifalijain
                 // edit: to change the background color:
                 //e.CellStyle.SelectionBackColor = Color.Coral;
             }
+        }
+
+        private void sale_purchase_datagridview1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            //if (e.RowIndex == -1 && e.ColumnIndex > -1)
+            //{
+            //    // Draw top double border
+            //    int topBorderThickness = 3; // Set the thickness of the top border
+            //    int bottomBorderThickness = 1; // Set the thickness of the bottom border
+            //    int x = e.CellBounds.Left;
+            //    int yTop = e.CellBounds.Top;
+            //    int yBottom = e.CellBounds.Bottom - bottomBorderThickness;
+            //    int width = e.CellBounds.Width;
+            //    using (Pen topBorderPen = new Pen(Color.Black, topBorderThickness))
+            //    using (Pen bottomBorderPen = new Pen(Color.Black, bottomBorderThickness))
+            //    {
+            //        // Draw top border
+            //        e.Graphics.DrawLine(topBorderPen, x, yTop, x + width, yTop);
+
+            //        // Draw bottom border
+            //        e.Graphics.DrawLine(bottomBorderPen, x, yBottom, x + width, yBottom);
+            //    }
+
+            //    // 
+
+
+            //    e.Handled = true;
+            //}
         }
 
         private void textBox4_KeyDown(object sender, KeyEventArgs e)
@@ -177,9 +207,7 @@ namespace copyprojectshaifalijain
                             {
                                 dataGridView1.Visible = false;
                                 textBox4.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-                                sale_purchase_datagridview1.Focus();
-
-                            
+                                sale_purchase_datagridview1.Focus();                            
                                 // below 2 lines i already add in OnEnter method of customcontrol
                                 // customControl11.CurrentCell = customControl11.Rows[0].Cells[0]; // Select the first cell                                
                                 //  customControl11.BeginEdit(true);
