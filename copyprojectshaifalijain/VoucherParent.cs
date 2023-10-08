@@ -57,6 +57,7 @@ namespace copyprojectshaifalijain
             }
             dt = new DataTable();
             dataGridView1.DataSource = dt = connectionlogics.FillDataGridView($"SELECT * FROM ledgernames").Tables[0];
+           // dataGridView1.ExpandColumns();
             dataGridView1.ColumnHeadersVisible = false;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
@@ -72,6 +73,7 @@ namespace copyprojectshaifalijain
             dataGridView1.Columns["id"].Visible = false;
             dataGridView1.Columns["opening_balance"].Visible = false;
             dataGridView1.ScrollBars = ScrollBars.None;
+            dataGridView1.RowTemplate.Height = 30;
             dataGridView1.TabStop = false;
             //  rpos = dataGridView1.CurrentCell.RowIndex;
             //   cpos = dataGridView1.CurrentCell.ColumnIndex;

@@ -20,7 +20,46 @@ namespace copyprojectshaifalijain
         {
             InitializeComponent();
         }
+        protected override bool ProcessDataGridViewKey(KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Tab:
+                case Keys.Right:
+                case Keys.Enter:
+                    {
+                        return base.ProcessTabKey(e.KeyData);
+                    }
+                case Keys.Up:
+                    {
+                        return base.ProcessUpKey(e.KeyData);
+                    }
+                case Keys.Down:
+                    {
+                        return base.ProcessDownKey(e.KeyData);
+                    }
+             
+                case Keys.Left:
+                    {
+                        return base.ProcessLeftKey(e.KeyData);
+                    }
+             
+            
+                case Keys.Delete:
+                    {
+                        return base.ProcessDeleteKey(e.KeyData);
+                    }
+               
+                case Keys.Escape:
+                    {
+                        return base.ProcessEscapeKey(e.KeyData);
+                    }
+               
+            }
 
+
+            return base.ProcessDataGridViewKey(e);
+        }
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
