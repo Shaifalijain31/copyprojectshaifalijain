@@ -19,9 +19,28 @@ namespace copyprojectshaifalijain
         public sale_purchase_datagridview()
         {
             InitializeComponent();
+           this.Columns[5].ReadOnly = true;
+        }
+        protected override void OnEnter(EventArgs e)
+        {
+            base.OnEnter(e);
+           
+
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            MessageBox.Show("ProcessCmdKey");
+            if((keyData==(Keys.Control | Keys.S)))
+            {
+                // save data
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
         protected override bool ProcessDataGridViewKey(KeyEventArgs e)
         {
+            MessageBox.Show("ProcessDataGridViewKey");
             switch (e.KeyCode)
             {
                 case Keys.Tab:
@@ -64,5 +83,6 @@ namespace copyprojectshaifalijain
         {
             base.OnPaint(pe);
         }
+
     }
 }

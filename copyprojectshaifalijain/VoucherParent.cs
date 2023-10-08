@@ -177,9 +177,9 @@ namespace copyprojectshaifalijain
                             {
                                 dataGridView1.Visible = false;
                                 textBox4.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-                              
-                                
-                                // customControl11.Focus();
+                                sale_purchase_datagridview1.Focus();
+
+                            
                                 // below 2 lines i already add in OnEnter method of customcontrol
                                 // customControl11.CurrentCell = customControl11.Rows[0].Cells[0]; // Select the first cell                                
                                 //  customControl11.BeginEdit(true);
