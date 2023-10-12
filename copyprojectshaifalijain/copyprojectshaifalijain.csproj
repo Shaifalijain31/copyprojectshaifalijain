@@ -53,6 +53,12 @@
     <Compile Include="blackborder_lightform.Designer.cs">
       <DependentUpon>blackborder_lightform.cs</DependentUpon>
     </Compile>
+    <Compile Include="checkpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkpage.Designer.cs">
+      <DependentUpon>checkpage.cs</DependentUpon>
+    </Compile>
     <Compile Include="formbackground.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </Compile>
     <EmbeddedResource Include="blackborder_lightform.resx">
       <DependentUpon>blackborder_lightform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="checkpage.resx">
+      <DependentUpon>checkpage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formbackground.resx">
       <DependentUpon>formbackground.cs</DependentUpon>

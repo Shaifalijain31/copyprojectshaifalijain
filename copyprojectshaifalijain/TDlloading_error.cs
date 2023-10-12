@@ -36,15 +36,15 @@ namespace copyprojectshaifalijain
                 {
                     mx.StartPosition = FormStartPosition.CenterParent;
                     mx.ShowInTaskbar = false;
-                    // mx.ShowDialog(formBackground);
-                    mx.Show(mainmasterpanel);
-                    mx.BringToFront();  // not working 
-                    mx.TopLevel = true; // not working 
-                    //if(mx.DialogResult == DialogResult.Cancel)
-                    //{
-                    //    formBackground.Close();
-                    //    formBackground = null;
-                    //}
+                     mx.ShowDialog(formBackground);
+                 //   mx.Show(mainmasterpanel);
+                    //   mx.BringToFront();  // not working 
+                    //  mx.TopLevel = true; // not working 
+                    if (mx.DialogResult == DialogResult.Cancel)
+                    {
+                        formBackground.Close();
+                        formBackground = null;
+                    }
                 }                
                
                 return true;
