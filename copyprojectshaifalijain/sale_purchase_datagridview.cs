@@ -117,7 +117,7 @@ namespace copyprojectshaifalijain
         protected override void OnEnter(EventArgs e)
         {
             dgv = Application.OpenForms["VoucherParent"].Controls["dataGridView1"] as DataGridView;
-            this.CurrentCell = this.Rows[0].Cells[0];
+            this.CurrentCell = this.Rows[0].Cells[0]; // invokes cell enter 
             this.BeginEdit(true); 
             
             base.OnEnter(e);
