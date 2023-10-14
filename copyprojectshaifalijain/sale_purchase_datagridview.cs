@@ -10,13 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace copyprojectshaifalijain
 {
     public partial class sale_purchase_datagridview : DataGridView
     {
         // suggested by gezza 
-        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataGridView LinkDataGridView { get; set; }
+     //   [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)]
+     //   public DataGridView LinkDataGridView { get; set; }
 
         private DataTable  dt2;        
         private DataView dataView;
@@ -29,15 +30,7 @@ namespace copyprojectshaifalijain
             //   this.BackgroundColor = Color.FromArgb(250, 243, 198);
             //   this.RowsDefaultCellStyle.BackColor = Color.FromArgb(250, 243, 198);
             //   this.DefaultCellStyle.SelectionBackColor = Color.FromArgb(168, 201, 170); // full row select color 
-            this.EnableHeadersVisualStyles = false;
-            this.ColumnHeadersDefaultCellStyle.SelectionBackColor = SystemColors.Control;
-            this.RowHeadersVisible = false;
-            this.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            this.ScrollBars = ScrollBars.None;
-            this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.MultiSelect = false;
-            this.AllowUserToResizeColumns = false;
-            this.AllowUserToResizeRows = false;
+                     
             this.RowTemplate.Height = 30;
             this.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9.75F, FontStyle.Bold); // HEADER FONT BOLD 
             this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -46,6 +39,7 @@ namespace copyprojectshaifalijain
             // column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dt2 = new DataTable();
+            this.SetCommon();
             
             InitializeComponent();
            
@@ -57,7 +51,7 @@ namespace copyprojectshaifalijain
         // important method
         protected override bool ProcessKeyPreview(ref Message m)
         {
-            MessageBox.Show("ProcessKeyPreview");
+           // MessageBox.Show("ProcessKeyPreview");
             KeyEventArgs args1 = new KeyEventArgs(((Keys)((int)m.WParam)) | Control.ModifierKeys);
             switch (args1.KeyCode)
             {
@@ -72,54 +66,11 @@ namespace copyprojectshaifalijain
             return base.ProcessKeyPreview(ref m);
         }
 
-        protected override bool ProcessDialogKey(Keys keyData)
-        {
-            MessageBox.Show("processdialogkey");
-            if (keyData == Keys.Enter)
-            {
-                this.CommitEdit(DataGridViewDataErrorContexts.Commit);
-                this.EndEdit();
-
-                int row = this.CurrentCell.RowIndex;
-                int col = this.CurrentCell.ColumnIndex;
-                if (col == 0 && string.IsNullOrEmpty(this.CurrentCell.Value?.ToString()))
-                {
-                    this.SelectNextControl(this, true, true, true, true);
-                    return true;
-                }
-                else if (col == this.ColumnCount - 1) // CHECK IF I AM AT LAST COLUMN 
-                {
-                    if (row == this.RowCount - 1)// CHECK IF I AM AT LAST ROW  
-                    {
-                        this.Rows.Add();
-                        this.CurrentCell = this[0, row + 1];
-                        this.BeginEdit(true);
-                        return base.ProcessDialogKey(keyData);
-                    }
-                    else
-                    {
-                        this.CurrentCell = this[0, row + 1];
-                        this.BeginEdit(true);
-                    }
-                }
-                else // not at last column 
-                {
-                    this.CurrentCell = this[col + 1, row]; // change column
-                    this.BeginEdit(true);
-                }
-                return true;
-            }
-            return base.ProcessDialogKey(keyData);
-
-        }
-
-
         protected override void OnEnter(EventArgs e)
         {
             dgv = Application.OpenForms["VoucherParent"].Controls["dataGridView1"] as DataGridView;
             this.CurrentCell = this.Rows[0].Cells[0]; // invokes cell enter 
-            this.BeginEdit(true); 
-            
+            this.BeginEdit(true);         
             base.OnEnter(e);
         }
         protected override void OnCellEndEdit(DataGridViewCellEventArgs e)
@@ -129,7 +80,7 @@ namespace copyprojectshaifalijain
                 if (dgv.Rows.Count > 0)
                 {
                     this.CurrentCell.Value = dgv.SelectedRows[0].Cells[1].Value.ToString();
-                      dgv.Visible = false;
+                     dgv.Visible = false;
                 }
             }
             if ((this.CurrentCell.ColumnIndex == 2 && this.CurrentRow.Cells[1].Value != null && this.CurrentRow.Cells[2].Value != null))
@@ -141,14 +92,18 @@ namespace copyprojectshaifalijain
 
                     decimal c = a * b;
 
-                    this.Rows[i].Cells[3].Value = c.ToString();
+                    this.Rows[i].Cells[5].Value = c.ToString();
                 }
             }
+            // only place where it is working 
+            // Reset cell style to default values
+            this.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = this.DefaultCellStyle.BackColor;
+            this.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = this.DefaultCellStyle.ForeColor;
+            this.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = this.DefaultCellStyle.Font;
 
 
+            //  dataView.RowFilter = ""; // resets the filter to its starting state 
 
-          //  dataView.RowFilter = ""; // resets the filter to its starting state 
-            
             base.OnCellEndEdit(e);
 
 
@@ -157,24 +112,27 @@ namespace copyprojectshaifalijain
         // changing the styles part starts
         private int previousRowIndex = -1;
         private int previousColumnIndex = -1;
-        protected override void OnCellEnter(DataGridViewCellEventArgs e)
+          protected override void OnCellEnter(DataGridViewCellEventArgs e)
         {
-            base.OnCellEnter(e);
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && (e.RowIndex != previousRowIndex || e.ColumnIndex != previousColumnIndex))
-            {
-                RestorePreviousCellStyles();
-                SetCurrentCellStyles(e.RowIndex, e.ColumnIndex);
-                UpdatePreviousIndices(e.RowIndex, e.ColumnIndex);
-              //  HighlightCurrentRow(e.RowIndex);
-            }
+
+            this.BeginEdit(true);// invokes oneditingcontrolshowing
+           
+           base.OnCellEnter(e);
+        //    //if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && (e.RowIndex != previousRowIndex || e.ColumnIndex != previousColumnIndex))
+        //    //{
+        //    //    RestorePreviousCellStyles();
+        //    //    SetCurrentCellStyles(e.RowIndex, e.ColumnIndex);
+        //    //    UpdatePreviousIndices(e.RowIndex, e.ColumnIndex);
+        //    //  //  HighlightCurrentRow(e.RowIndex);
+        //    //}
         }
 
-        private void SetCurrentCellStyles(int rowIndex, int columnIndex)
-        {
-            this.Rows[rowIndex].Cells[columnIndex].Style.BackColor = Color.Black;
-            this.Rows[rowIndex].Cells[columnIndex].Style.ForeColor = Color.White;
-            this.Rows[rowIndex].DefaultCellStyle.Font = new Font(this.DefaultCellStyle.Font, FontStyle.Bold);
-        }
+        //private void SetCurrentCellStyles(int rowIndex, int columnIndex)
+        //{
+        // //  this.Rows[rowIndex].Cells[columnIndex].Style.BackColor = Color.Black;
+        //  //  this.Rows[rowIndex].Cells[columnIndex].Style.ForeColor = Color.White;
+        //  //  this.Rows[rowIndex].DefaultCellStyle.Font = new Font(this.DefaultCellStyle.Font, FontStyle.Bold);
+        //}
 
         //private void HighlightCurrentRow(int rowIndex)
         //{
@@ -196,11 +154,11 @@ namespace copyprojectshaifalijain
         }
         private void RestoreCellStyles(int rowIndex, int columnIndex)
         {
-             //this.Rows[rowIndex].Cells[columnIndex].Style.BackColor = this.Parent.BackColor;
-            // this.Rows[rowIndex].Cells[columnIndex].Style.ForeColor = this.DefaultCellStyle.ForeColor;
+            // this.Rows[rowIndex].Cells[columnIndex].Style.BackColor = this.Parent.BackColor;
+           //  this.Rows[rowIndex].Cells[columnIndex].Style.ForeColor = this.DefaultCellStyle.ForeColor;
 
            //  this.Rows[rowIndex].Cells[columnIndex].Style.BackColor = Color.;
-             this.Rows[rowIndex].Cells[columnIndex].Style.ForeColor = Color.Black ;
+           //  this.Rows[rowIndex].Cells[columnIndex].Style.ForeColor = Color.Black ;
         }
         private void RestorePreviousCellStyles()
         {
@@ -245,10 +203,11 @@ namespace copyprojectshaifalijain
 
         protected override void OnEditingControlShowing(DataGridViewEditingControlShowingEventArgs e)
         {
+            // only place where it is working 
+            e.CellStyle.BackColor = Color.FromArgb(0, 0, 0); // change cell color to black 
+            e.CellStyle.ForeColor = Color.FromArgb(255, 255, 255); // change cell color to white  
+            e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold | FontStyle.Italic);
 
-            //e.CellStyle.BackColor = Color.FromArgb(0, 0, 0); // change cell color to black 
-            //e.CellStyle.ForeColor = Color.FromArgb(255, 255, 255); // change cell color to white  
-            //e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold | FontStyle.Italic);
 
             e.Control.KeyPress -= new KeyPressEventHandler(textbox_keypress);
             e.Control.TextChanged -= new EventHandler(TextBox_TextChanged);
@@ -358,17 +317,7 @@ namespace copyprojectshaifalijain
                             e.Handled = true;
                             break;
                         case Keys.Enter://
-                            {//
-                                //if (dataGridView1.Rows.Count > 0)//
-                                //{//
-                                //    dataGridView1.Visible = false;//
-                                //    customtextbox3.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();//
-                                //    customControl11.Focus(); //
-                                //                             // below 2 lines i already add in OnEnter method of customcontrol
-                                //                             // customControl11.CurrentCell = customControl11.Rows[0].Cells[0]; // Select the first cell                                
-                                //                             //  customControl11.BeginEdit(true);
-                                //    dataView.RowFilter = ""; // resets the filter to its starting state 
-                                //}
+                            {
                                 e.Handled = e.SuppressKeyPress = true; //
                                 break;//
                             }
@@ -379,67 +328,35 @@ namespace copyprojectshaifalijain
         }
 
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)        
         {
-                MessageBox.Show("ProcessCmdKey");
-            //    if ((keyData == (Keys.Control | Keys.S)))
-            //    {
-            //        // save data
-            //    }
-            //    if ((keyData == (Keys.Enter)))
-            //    {
-            //        if (dgv.Rows.Count > 0)
-            //        {
-            //            dgv.Visible = false;
-            //        }
-            //        dataView.RowFilter = ""; // resets the filter to its starting state 
-            //    }
-
-
-            return base.ProcessCmdKey(ref msg, keyData);
+            if (keyData == Keys.Enter || keyData ==Keys.Right)
+            {
+                this.CommitEdit(DataGridViewDataErrorContexts.Commit);
+                this.EndEdit();
+                int row = this.CurrentCell.RowIndex;
+                int col = this.CurrentCell.ColumnIndex;
+                if (col == 0 && string.IsNullOrEmpty(this.CurrentCell.Value?.ToString())) // if user presses enter on first column without putting value  
+                {
+                    this.SelectNextControl(this, true, true, true, true); // move out of datagridview 
+                    return true;
+                }
+                else if (col == this.ColumnCount - 1 && row == this.RowCount - 1) // CHECK IF I AM AT LAST COLUMN and last row 
+                {
+                    this.Rows.Add();
+                    this.CurrentCell = this[0, row + 1];
+                    this.BeginEdit(true);
+                    return true;
+                }
+                else
+                {
+                    return ProcessTabKey(Keys.Tab);
+                }
+            }           
+            return base.ProcessCmdKey(ref msg, keyData);           
         }
 
-        protected override bool ProcessDataGridViewKey(KeyEventArgs e)
-        {
-            MessageBox.Show("ProcessDataGridViewKey");
-            //switch (e.KeyCode)
-            //{
-            //    case Keys.Tab:
-            //    case Keys.Right:
-            //    case Keys.Enter:
-            //        {
-            //            return base.ProcessTabKey(e.KeyData);
-            //        }
-            //    case Keys.Up:
-            //        {
-            //            return base.ProcessUpKey(e.KeyData);
-            //        }
-            //    case Keys.Down:
-            //        {
-            //            return base.ProcessDownKey(e.KeyData);
-            //        }
 
-            //    case Keys.Left:
-            //        {
-            //            return base.ProcessLeftKey(e.KeyData);
-            //        }
-
-
-            //    case Keys.Delete:
-            //        {
-            //            return base.ProcessDeleteKey(e.KeyData);
-            //        }
-
-            //    case Keys.Escape:
-            //        {
-            //            return base.ProcessEscapeKey(e.KeyData);
-            //        }
-
-            //}
-
-
-            return base.ProcessDataGridViewKey(e);
-        }
 
         private void sale_purchase_datagridview_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -487,10 +404,10 @@ namespace copyprojectshaifalijain
             }
         }
 
-        //protected override void OnPaint(PaintEventArgs pe)
-        //{
-        //    base.OnPaint(pe);
-        //}
+        protected override void OnPaint(PaintEventArgs pe)
+        {
+            base.OnPaint(pe);
+        }
 
     }
 }

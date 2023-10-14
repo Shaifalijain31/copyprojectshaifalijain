@@ -59,21 +59,15 @@ namespace copyprojectshaifalijain
             dt = new DataTable();
             dataGridView1.DataSource = dt = connectionlogics.FillDataGridView($"SELECT * FROM ledgernames").Tables[0];
            // dataGridView1.ExpandColumns();
-            dataGridView1.ColumnHeadersVisible = false;
-            dataGridView1.RowHeadersVisible = false; //
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None; //
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect; //
-            dataGridView1.MultiSelect = false; //
-            dataGridView1.AllowUserToResizeColumns = false; //
-            dataGridView1.AllowUserToResizeRows = false; //
+           dataGridView1.SetCommon();
+            dataGridView1.ColumnHeadersVisible = false;   
             dataGridView1.AllowUserToAddRows = false; // needed to remove last default row
             dataGridView1.ReadOnly = true;
             dataGridView1.BackgroundColor = Color.FromArgb(211, 241, 213); //
             dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(211, 241, 213); //
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(128,128,128); //
             dataGridView1.Columns["id"].Visible = false;
-            dataGridView1.Columns["opening_balance"].Visible = false;
-            dataGridView1.ScrollBars = ScrollBars.None; //
+            dataGridView1.Columns["opening_balance"].Visible = false;            
             dataGridView1.RowTemplate.Height = 30; // set height suggested by karen payne 
             dataGridView1.TabStop = false;
             //  rpos = dataGridView1.CurrentCell.RowIndex;
@@ -111,13 +105,13 @@ namespace copyprojectshaifalijain
                 else
                 {
 
-                  //  dataGridView1.DataSource = dataView;
+                 
                 }
             }
             else if(searchText.Length == 0)
             {
                 dataView.RowFilter = null;
-               // dataGridView1.DataSource = dt.DefaultView;
+               
             }
             textBox4.Select(textBox4.Text.Length, 0); // Set cursor at the end
         }
@@ -133,7 +127,7 @@ namespace copyprojectshaifalijain
 
         }
 
-        // MAKE FONT BOLD WHEN UP AND DOWN 
+        // MAKE FONT BOLD WHEN SELECTION UP AND DOWN 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             DataGridView dataGridView = sender as DataGridView;
@@ -185,11 +179,12 @@ namespace copyprojectshaifalijain
                             {
                                 dataGridView1.Visible = false;
                                 textBox4.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                                dataView.RowFilter = ""; // resets the filter to its starting state 
                                 sale_purchase_datagridview1.Focus();                            
                                 // below 2 lines i already add in OnEnter method of customcontrol
                                 // customControl11.CurrentCell = customControl11.Rows[0].Cells[0]; // Select the first cell                                
                                 //  customControl11.BeginEdit(true);
-                                dataView.RowFilter = ""; // resets the filter to its starting state 
+                                
                             }
                             e.Handled = e.SuppressKeyPress = true;
                             break;

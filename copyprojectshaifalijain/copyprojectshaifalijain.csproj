@@ -66,6 +66,7 @@
       <DependentUpon>formbackground.cs</DependentUpon>
     </Compile>
     <Compile Include="helperclasses\connectionlogics.cs" />
+    <Compile Include="helperclasses\datagridviewcommonproperties.cs" />
     <Compile Include="helperclasses\DataGridViewExtensions.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
