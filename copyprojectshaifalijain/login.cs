@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace copyprojectshaifalijain
 {
-    public partial class login : blackborder_lightform
+    public partial class login : Form
     {
         public login()
         {

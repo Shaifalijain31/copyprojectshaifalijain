@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace copyprojectshaifalijain
 {
-    public partial class MainExitForm : blackborder_lightform
+    public partial class MainExitForm : Form
     {
 
         readonly List<Control> enabledList = new List<Control>();

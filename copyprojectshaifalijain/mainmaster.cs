@@ -12,18 +12,7 @@ namespace copyprojectshaifalijain
 {
     public partial class mainmaster : Form
     {
-        //code for disabling close button 
-        private const int NOCLOSE_BUTTON = 0x200;
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | NOCLOSE_BUTTON;
-                return myCp;
-            }
-        }
+        
         public mainmaster()
         {
             InitializeComponent();
@@ -72,8 +61,7 @@ namespace copyprojectshaifalijain
 
         private void mainmaster_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // prevent the user from closing the from  directly by taksbar 
-            e.Cancel = true;
+            
         }
 
         private void Mainmasterpanel_Paint(object sender, PaintEventArgs e)

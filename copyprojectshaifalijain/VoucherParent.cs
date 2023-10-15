@@ -12,7 +12,7 @@ using copyprojectshaifalijain.helperclasses;
 
 namespace copyprojectshaifalijain
 {
-    public partial class VoucherParent : blackborder_lightform
+    public partial class VoucherParent : Form
     {
 
         int rpos, cpos;
