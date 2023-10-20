@@ -47,56 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="blackborder_lightform.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="blackborder_lightform.Designer.cs">
-      <DependentUpon>blackborder_lightform.cs</DependentUpon>
-    </Compile>
-    <Compile Include="checkpage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="checkpage.Designer.cs">
-      <DependentUpon>checkpage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formbackground.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formbackground.Designer.cs">
-      <DependentUpon>formbackground.cs</DependentUpon>
-    </Compile>
-    <Compile Include="helperclasses\connectionlogics.cs" />
-    <Compile Include="helperclasses\datagridviewcommonproperties.cs" />
     <Compile Include="helperclasses\DataGridViewExtensions.cs" />
-    <Compile Include="login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="login.Designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainExitForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainExitForm.Designer.cs">
-      <DependentUpon>MainExitForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="mainmaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mainmaster.Designer.cs">
-      <DependentUpon>mainmaster.cs</DependentUpon>
-    </Compile>
     <Compile Include="sale_purchase_datagridview.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="sale_purchase_datagridview.Designer.cs">
       <DependentUpon>sale_purchase_datagridview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SPECIALCONTROLS\textboxspecial.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SPECIALCONTROLS\textboxspecial.Designer.cs">
-      <DependentUpon>textboxspecial.cs</DependentUpon>
     </Compile>
     <Compile Include="Sql\ReferenceTables.cs" />
     <Compile Include="Sql\SqlOperations.cs" />
@@ -110,30 +66,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TDlloading_error.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TDlloading_error.Designer.cs">
-      <DependentUpon>TDlloading_error.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="blackborder_lightform.resx">
-      <DependentUpon>blackborder_lightform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="checkpage.resx">
-      <DependentUpon>checkpage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formbackground.resx">
-      <DependentUpon>formbackground.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
-      <DependentUpon>login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainExitForm.resx">
-      <DependentUpon>MainExitForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mainmaster.resx">
-      <DependentUpon>mainmaster.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -145,9 +77,6 @@
     </Compile>
     <EmbeddedResource Include="sale_purchase_datagridview.resx">
       <DependentUpon>sale_purchase_datagridview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TDlloading_error.resx">
-      <DependentUpon>TDlloading_error.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VoucherParent.resx">
       <DependentUpon>VoucherParent.cs</DependentUpon>
