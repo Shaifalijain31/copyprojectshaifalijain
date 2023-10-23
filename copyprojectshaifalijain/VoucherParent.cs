@@ -56,6 +56,8 @@ namespace copyprojectshaifalijain
                     textBox2.Show();
                     break;
             }
+
+
             dt = new DataTable();
             dataGridView1.DataSource = dt = connectionlogics.FillDataGridView($"SELECT * FROM ledgernames").Tables[0];
            // dataGridView1.ExpandColumns();
