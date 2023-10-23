@@ -58,12 +58,6 @@
     <Compile Include="Sql\SqlOperations.cs" />
     <Compile Include="Sql\SqlStatements.cs" />
     <Compile Include="Sql\SetupLogging.cs" />
-    <Compile Include="VoucherParent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VoucherParent.Designer.cs">
-      <DependentUpon>VoucherParent.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -77,9 +71,6 @@
     </Compile>
     <EmbeddedResource Include="sale_purchase_datagridview.resx">
       <DependentUpon>sale_purchase_datagridview.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VoucherParent.resx">
-      <DependentUpon>VoucherParent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

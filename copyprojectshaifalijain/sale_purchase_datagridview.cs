@@ -31,15 +31,15 @@ namespace copyprojectshaifalijain
             //   this.RowsDefaultCellStyle.BackColor = Color.FromArgb(250, 243, 198);
             //   this.DefaultCellStyle.SelectionBackColor = Color.FromArgb(168, 201, 170); // full row select color 
                      
-            this.RowTemplate.Height = 30;
-            this.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9.75F, FontStyle.Bold); // HEADER FONT BOLD 
+          //  this.RowTemplate.Height = 30;
+           // this.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9.75F, FontStyle.Bold); // HEADER FONT BOLD 
             this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             //var column = this.Columns.GetLastColumn(DataGridViewElementStates.Visible,
             //                   DataGridViewElementStates.None);
             // column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dt2 = new DataTable();
-            this.SetCommon();
+          //  this.SetCommon();
             
             InitializeComponent();
            
@@ -49,22 +49,22 @@ namespace copyprojectshaifalijain
 
         //PREVENT EATING OF ARROW KEYS BY TEXTBOX INSIDE DATAGRIDVIEW 
         // important method
-        protected override bool ProcessKeyPreview(ref Message m)
-        {
-           // MessageBox.Show("ProcessKeyPreview");
-            KeyEventArgs args1 = new KeyEventArgs(((Keys)((int)m.WParam)) | Control.ModifierKeys);
-            switch (args1.KeyCode)
-            {
-                case Keys.Left:
-                case Keys.Right:
-                case Keys.Up:
-                case Keys.Down:
+        //protected override bool ProcessKeyPreview(ref Message m)
+        //{
+        //   // MessageBox.Show("ProcessKeyPreview");
+        //    KeyEventArgs args1 = new KeyEventArgs(((Keys)((int)m.WParam)) | Control.ModifierKeys);
+        //    switch (args1.KeyCode)
+        //    {
+        //        case Keys.Left:
+        //        case Keys.Right:
+        //        case Keys.Up:
+        //        case Keys.Down:
                 
                
-                    return false;
-            }
-            return base.ProcessKeyPreview(ref m);
-        }
+        //            return false;
+        //    }
+        //    return base.ProcessKeyPreview(ref m);
+        //}
 
         protected override void OnEnter(EventArgs e)
         {
