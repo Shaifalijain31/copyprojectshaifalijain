@@ -56,23 +56,23 @@ namespace copyprojectshaifalijain
                     textBox2.Show();
                     break;
             }
-            dt = new DataTable();
-            dataGridView1.DataSource = dt = connectionlogics.FillDataGridView($"SELECT * FROM ledgernames").Tables[0];
+          //  dt = new DataTable();
+           // dataGridView1.DataSource = dt = connectionlogics.FillDataGridView($"SELECT * FROM ledgernames").Tables[0];
            // dataGridView1.ExpandColumns();
-           dataGridView1.SetCommon();
-            dataGridView1.ColumnHeadersVisible = false;   
-            dataGridView1.AllowUserToAddRows = false; // needed to remove last default row
-            dataGridView1.ReadOnly = true;
-            dataGridView1.BackgroundColor = Color.FromArgb(211, 241, 213); //
-            dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(211, 241, 213); //
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(128,128,128); //
-            dataGridView1.Columns["id"].Visible = false;
-            dataGridView1.Columns["opening_balance"].Visible = false;            
-            dataGridView1.RowTemplate.Height = 30; // set height suggested by karen payne 
-            dataGridView1.TabStop = false;
+           // dataGridView1.SetCommon();
+           // dataGridView1.ColumnHeadersVisible = false;   
+           // dataGridView1.AllowUserToAddRows = false; // needed to remove last default row
+           // dataGridView1.ReadOnly = true;
+           // dataGridView1.BackgroundColor = Color.FromArgb(211, 241, 213); //
+           // dataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(211, 241, 213); //
+            //   dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(128,128,128); //
+           // dataGridView1.Columns["id"].Visible = false;
+           // dataGridView1.Columns["opening_balance"].Visible = false;            
+           // dataGridView1.RowTemplate.Height = 30; // set height suggested by karen payne 
+            //dataGridView1.TabStop = false;
             //  rpos = dataGridView1.CurrentCell.RowIndex;
             //   cpos = dataGridView1.CurrentCell.ColumnIndex;
-            dataGridView1.Visible = false;
+          //  dataGridView1.Visible = false;
 
 
         }
@@ -118,7 +118,7 @@ namespace copyprojectshaifalijain
 
         private void textBox4_Enter(object sender, EventArgs e)
         {
-            dataGridView1.Visible = true; 
+           dataGridView1.Visible = true; 
            dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[1];
         }
 
